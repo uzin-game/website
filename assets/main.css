@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: "roobert";
+		font-style: normal;
+		font-weight: normal;
+		src: url("fonts/regular.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: "roobert";
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/medium.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: "roobert";
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/semi.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: "roobert";
+		font-style: italic;
+		font-weight: bold;
+		src: url("/fonts/bold.woff2") format("woff2");
+	}
+}
+
+@layer utilities {
+	.animation-delay-2000 {
+		animation-delay: 2s;
+	}
+	.animation-delay-4000 {
+		animation-delay: 4s;
+	}
+}
