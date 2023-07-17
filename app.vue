@@ -1,3 +1,39 @@
+<script setup lang="ts">
+const cards = [
+	{
+		name: "Now with Binance",
+		description: "Connect your Binance account and explore all the possibilities Nitrogen has to offer!",
+		image: "code2.svg",
+		width: "col-span-2",
+		style: "top: 136px",
+	},
+
+	{
+		name: "Our new logo!",
+		description: "Check it out!",
+		image: "logo.svg",
+		width: "col-span-1",
+		style: "top: 136px; width: 100%;",
+	},
+
+	{
+		name: "Our new logo!",
+		description: "Check it out!",
+		image: "logo.svg",
+		width: "col-span-1",
+		style: "top: 136px; width: 100%;",
+	},
+
+	{
+		name: "Now with Binance",
+		description: "Connect your Binance account and explore all the possibilities Nitrogen has to offer!",
+		image: "code2.svg",
+		width: "col-span-2",
+		style: "top: 136px",
+	},
+];
+</script>
+
 <template>
 	<div class="bg-[#18181b] h-full font-roobert overflow-x-hidden">
 		<Navbar />
@@ -5,11 +41,11 @@
 		<div class="mx-center flex flex-col items-center relative justify-center pt-24 lg:pt-32">
 			<h1 class="text-4xl lg:text-7xl text-white font-semibold lg:font-medium">The best coin on the planet</h1>
 
-			<h3
-				class="text-transparent text-4xl lg:text-7xl font-semibold lg:font-medium bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
+			<h1
+				class="text-transparent h-[78px] text-4xl lg:text-7xl font-semibold lg:font-medium bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
 			>
 				is Nitrogen
-			</h3>
+			</h1>
 
 			<p class="text-gray-400 text-lg px-4 lg:px-0 lg:text-xl mt-5 text-center">
 				<span class="text-white font-medium">Create</span> your crypto wallet or import one from Coinbase.
@@ -36,12 +72,26 @@
 			<div class="card relative rounded-3xl mx-auto w-11/12 lg:w-8/12 h-[320px] overflow-hidden py-10">
 				<div class="flex flex-row items-center justify-center">
 					<div class="flex flex-col items-center text-base text-white">
-						<p class="font-semibold text-3xl tracking-tight">Now with dedicated editor</p>
-						<p>It has never been easy to modify the blockchain.</p>
+						<p class="font-semibold text-3xl tracking-tight">Now with a dedicated editor</p>
+						<p>It has never been this easy to modify the blockchain.</p>
 						<p>I have no idea what I'm talking about...</p>
 					</div>
 
 					<img class="rounded-tr-none absolute top-36" src="/code.svg" />
+				</div>
+			</div>
+		</div>
+
+		<div class="w-8/12 pb-20 mx-auto">
+			<div class="grid grid-cols-3 gap-6">
+				<div v-for="card in cards" :class="card.width">
+					<Card
+						:name="card.name"
+						:description="card.description"
+						:image="card.image"
+						:width="card.width"
+						:style="card.style"
+					/>
 				</div>
 			</div>
 		</div>
