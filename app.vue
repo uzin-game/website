@@ -39,15 +39,15 @@ const cards = [
 		<Navbar />
 
 		<div class="mx-center flex flex-col items-center relative justify-center pt-24 lg:pt-32">
-			<h1 class="text-4xl lg:text-7xl text-white font-semibold lg:font-medium">The best coin on the planet</h1>
+			<h1 class="text-3xl lg:text-7xl text-white font-semibold lg:font-medium">The best coin on the planet</h1>
 
 			<h1
-				class="text-transparent h-[78px] text-4xl lg:text-7xl font-semibold lg:font-medium bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
+				class="text-transparent h-[78px] text-3xl lg:text-7xl font-semibold lg:font-medium bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
 			>
 				is Nitrogen
 			</h1>
 
-			<p class="text-gray-400 text-lg px-4 lg:px-0 lg:text-xl mt-5 text-center">
+			<p class="text-gray-400 text-base px-2 lg:px-0 lg:text-xl lg:mt-5 text-center">
 				<span class="text-white font-medium">Create</span> your crypto wallet or import one from Coinbase.
 				<span class="text-white font-medium">Share</span> it with the community.<br />
 				<span class="text-white font-medium">Get</span> tons of money quickly, risk-free.
@@ -69,22 +69,24 @@ const cards = [
 		</div>
 
 		<div class="py-16">
-			<div class="card relative rounded-3xl mx-auto w-11/12 lg:w-8/12 h-[320px] overflow-hidden py-10">
+			<div
+				class="card relative rounded-3xl mx-auto w-11/12 lg:w-8/12 h-[200px] lg:h-[320px] overflow-hidden py-5 lg:py-10 px-10"
+			>
 				<div class="flex flex-row items-center justify-center">
-					<div class="flex flex-col items-center text-base text-white">
-						<p class="font-semibold text-3xl tracking-tight">Now with a dedicated editor</p>
+					<div class="flex flex-col items-center text-xs text-center lg:text-base text-white">
+						<p class="font-semibold text-xl lg:text-3xl tracking-tight">Now with a dedicated editor</p>
 						<p>It has never been this easy to modify the blockchain.</p>
 						<p>I have no idea what I'm talking about...</p>
 					</div>
 
-					<img class="rounded-tr-none absolute top-36" src="/code.svg" />
+					<img class="rounded-tr-none absolute top-24 lg:top-36" src="/code.svg" />
 				</div>
 			</div>
 		</div>
 
 		<div class="w-8/12 pb-20 mx-auto">
-			<div class="grid grid-cols-3 gap-6">
-				<div v-for="card in cards" :class="card.width">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+				<div v-for="card in cards" :class="'lg:' + card.width">
 					<Card
 						:name="card.name"
 						:description="card.description"

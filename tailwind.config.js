@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./app.vue", "./src/**/*.vue"],
+	safelist: ["lg:col-span-2", "lg:col-span-1"],
 	theme: {
 		extend: {
 			animation: {
