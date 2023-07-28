@@ -1,8 +1,12 @@
 <script setup lang="ts">
-const borderImage = ref("linear-gradient(transparent, transparent)");
+import { FunctionalComponent } from "nuxt/dist/app/compat/capi";
+
+const reset = "linear-gradient(transparent, transparent)";
+
+const borderImage = ref(reset);
 
 const leave = () => {
-	borderImage.value = "linear-gradient(transparent, transparent)";
+	borderImage.value = reset;
 };
 
 const move = (e: MouseEvent) => {
@@ -19,25 +23,25 @@ const move = (e: MouseEvent) => {
 defineProps<{
 	name: string;
 	description: string;
-	image: string;
-	width: string;
-	style: string;
+	icon: FunctionalComponent;
 }>();
 </script>
 
 <template>
 	<div
-		class="relative rounded-lg w-auto border-double border-2 h-[320px] overflow-hidden border-transparent duration-100 bg-origin-border bg-[#202023] bg-opacity-30 hover:bg-[#27272a] transition-all border-element"
+		class="relative rounded-lg w-auto border-double border-2 overflow-hidden border-transparent duration-100 bg-origin-border bg-[#29292c] bg-opacity-30 hover:bg-[#27272a] transition-all border-element"
 		@mouseleave="leave"
 		@mousemove="move"
 	>
 		<div class="p-6">
-			<div class="flex flex-col gap-y-1">
-				<p class="text-2xl font-medium text-white">{{ name }}</p>
-				<p class="text-lg text-gray-400">{{ description }}</p>
-			</div>
+			<div class="flex flex-col space-y-2">
+				<p class="flex flex-row items-center space-x-2.5">
+					<component :is="icon" class="w-8 h-8 p-[4px] text-white bg-purple-500 rounded-lg" />
+					<span class="text-lg font-medium leading-6 text-white lg:text-xl">{{ name }}</span>
+                </p>
 
-			<img :style="style" class="rounded-tr-none absolute" :src="image" />
+				<p class="text-sm lg:text-base text-zinc-300">{{ description }}</p>
+			</div>
 		</div>
 	</div>
 </template>

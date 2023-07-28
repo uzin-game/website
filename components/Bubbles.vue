@@ -1,17 +1,24 @@
+<script setup lang="tsx">
+const baseStyles = "absolute rounded-full w-72 h-72 mix-blend-multiply filter blur-xl opacity-10 animate-blob";
+
+const specificStyles = [
+	"top-0 bg-purple-300 -left-6",
+	"top-0 -right-6 bg-violet-800 animation-delay-2000",
+	"bg-pink-300 -bottom-8 left-20 animation-delay-4000",
+	"bg-indigo-700 -bottom-8 right-20 animation-delay-4000",
+];
+
+const Bubble = defineNuxtComponent({
+	name: "Bubble",
+	props: {
+		style: String,
+	},
+	setup(props) {
+		return () => <div class={`${baseStyles} ${props.style}`} />;
+	},
+});
+</script>
+
 <template>
-	<div
-		class="absolute top-0 -left-6 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"
-	/>
-
-	<div
-		class="absolute top-0 -right-6 w-72 h-72 bg-violet-800 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"
-	/>
-
-	<div
-		class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"
-	/>
-
-	<div
-		class="absolute -bottom-8 right-20 w-72 h-72 bg-indigo-700 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"
-	/>
+	<Bubble v-for="style in specificStyles" :style="style" />
 </template>

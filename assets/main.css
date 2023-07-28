@@ -23,13 +23,6 @@
 		font-weight: 700;
 		src: url("/fonts/semi.woff2") format("woff2");
 	}
-
-	@font-face {
-		font-family: "roobert";
-		font-style: italic;
-		font-weight: bold;
-		src: url("/fonts/bold.woff2") format("woff2");
-	}
 }
 
 @layer utilities {

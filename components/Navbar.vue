@@ -1,23 +1,34 @@
 <script setup lang="ts">
-const items = ["Home", "About", "Contact", "Community", "Coins"];
+import { QuestionMarkCircleIcon, LightBulbIcon, PaperAirplaneIcon, LinkIcon } from "@heroicons/vue/24/solid";
+
+const items = [
+	{ name: "How does it work?", icon: QuestionMarkCircleIcon },
+	{ name: "Features", icon: LightBulbIcon },
+	{ name: "Twitter", icon: LinkIcon },
+	{ name: "Telegram", icon: PaperAirplaneIcon },
+];
 </script>
 
 <template>
-	<div class="lg:w-9/12 mx-auto h-20 w-11/12">
-		<div class="py-5 flex flex-row items-center justify-between">
+	<div class="w-11/12 h-20 mx-auto lg:w-9/12">
+		<div class="flex flex-row items-center justify-between py-5">
 			<img src="/logo.svg" />
 
-			<div class="lg:flex flex-row gap-8 tracking-wide hidden text-white">
-				<div v-for="item in items">
-					<p class="transition-colors cursor-pointer hover:text-purple-400">{{ item }}</p>
+			<div class="flex-row hidden gap-8 tracking-wide text-white lg:flex">
+				<div
+					v-for="{ icon, name } in items"
+					class="flex transition-colors cursor-pointer flex-row hover:text-purple-400 items-center space-x-1.5"
+				>
+					<component :is="icon" class="w-6 h-6" />
+					<p>{{ name }}</p>
 				</div>
 			</div>
 
 			<button
 				type="button"
-				class="focus:outline-none transition-colors text-white hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 mb-2 ring-2 ring-purple-600 ring-opacity-70"
+				class="px-4 py-2 mb-2 text-sm font-medium text-white transition-colors rounded-lg focus:outline-none hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 ring-2 ring-purple-600 ring-opacity-70"
 			>
-				Log in
+				Buy $NITRO
 			</button>
 		</div>
 	</div>
