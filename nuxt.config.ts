@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 					content:
 						"nitrogen, nitro, token, crypto, cryptocurrency, deflationary, hyper-deflationary, safemoon",
 				},
-				{ name: "theme-color", content: "#18181b" },
+				{ name: "theme-color", content: "#6b32f0" },
 				{ name: "color-scheme", content: "dark" },
 				{ property: "og:image", content: "/logo.png" },
 				{ property: "og:title", content: "Nitrogen - $NITRO" },
