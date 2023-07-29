@@ -54,7 +54,7 @@ const buttons = [
 const cards = [
 	{
 		title: "Holder rewards",
-		label: "You may stake your $NITRO tokens for rewards using our custom-designed staking mechanism. Receive payouts in BNB!",
+		label: "You may stake your $NITRO tokens for rewards using our custom-designed staking mechanism. Receive payouts in BNB and withdraw at anytime.",
 		icon: GiftIcon,
 	},
 
@@ -66,13 +66,13 @@ const cards = [
 
 	{
 		title: "Ambitious & Transparent Team",
-		label: "All money used by the marketing wallet will be reported to the community to ensure ongoing trust. The marketing wallet will not just be used for marketing but for giveaways, promotions & further development. We have big dreams for Nitrogen and we'll be happy for you to join us.",
+		label: "All funds used by the marketing wallet will be reported to the community to ensure ongoing trust. The marketing wallet will not just be used for marketing but for giveaways, promotions & further development. We have big dreams for Nitrogen and we'll be happy for you to join us.",
 		icon: UserGroupIcon,
 	},
 
 	{
-		title: "What is this?",
-		label: "Some cool feature that'll be soon available!",
+		title: "Create diamond hands",
+		label: "Another unique feature we have invented and developed will only allow users to earn rewards on their $NITRO after they have held it for a certain amount of time, called the \"preliminary phase\" This will encourage users to hold their tokens for longer periods of time, creating diamond hands.",
 		icon: QuestionMarkCircleIcon,
 	},
 ];
@@ -141,7 +141,7 @@ for (var i = 0; i < cards.length; i++) {
 					</p>
 
 					<p>
-						This means that we can still tax transactions at 0 cost to the trader. The tax rate is 50% of
+						This means that we can still tax transactions at <strong>0 cost to the trader.</strong> The tax rate is 50% of
 						the <code>$NITRO</code> trade value. The 50% is broken down as follows:
 					</p>
 
@@ -149,7 +149,7 @@ for (var i = 0; i < cards.length; i++) {
 						<li>Automatic LP: 6%</li>
 						<li>Marketing: 6%</li>
 						<li>Staking Rewards: 6%</li>
-						<li>Automatic burn: 6%</li>
+						<li>Automatic burn: 32%</li>
 					</ul>
 				</div>
 			</div>
