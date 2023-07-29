@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FunctionalComponent } from "nuxt/dist/app/compat/capi";
+import type { FunctionalComponent } from "nuxt/dist/app/compat/capi";
 
 const reset = "linear-gradient(transparent, transparent)";
 

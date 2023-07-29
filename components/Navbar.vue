@@ -2,10 +2,10 @@
 import { QuestionMarkCircleIcon, LightBulbIcon, PaperAirplaneIcon, LinkIcon } from "@heroicons/vue/24/solid";
 
 const items = [
-	{ name: "How does it work?", icon: QuestionMarkCircleIcon },
-	{ name: "Features", icon: LightBulbIcon },
-	{ name: "Twitter", icon: LinkIcon },
-	{ name: "Telegram", icon: PaperAirplaneIcon },
+	{ name: "How does it work?", icon: QuestionMarkCircleIcon, url: "#how" },
+	{ name: "Features", icon: LightBulbIcon, url: "#features" },
+	{ name: "Twitter", icon: LinkIcon, url: "#twitter" },
+	{ name: "Telegram", icon: PaperAirplaneIcon, url: "#telegram" },
 ];
 </script>
 
@@ -15,13 +15,14 @@ const items = [
 			<img src="/logo.svg" />
 
 			<div class="flex-row hidden gap-8 tracking-wide text-white lg:flex">
-				<div
-					v-for="{ icon, name } in items"
+				<a
+					v-for="{ icon, name, url } in items"
+					:href="url"
 					class="flex transition-colors cursor-pointer flex-row hover:text-purple-400 items-center space-x-1.5"
 				>
 					<component :is="icon" class="w-6 h-6" />
 					<p>{{ name }}</p>
-				</div>
+				</a>
 			</div>
 
 			<button

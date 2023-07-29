@@ -6,43 +6,11 @@ import {
 	UserPlusIcon,
 	GiftIcon,
 	UserGroupIcon,
-	QuestionMarkCircleIcon,
 	ArrowTrendingUpIcon,
 	BanknotesIcon,
 	WalletIcon,
+	BoltIcon,
 } from "@heroicons/vue/24/solid";
-
-useHead({
-	title: "Nitrogen - $NITRO",
-	meta: [
-		{
-			name: "description",
-			content: "Nitrogen is a hyper-deflationary token with 0% trade taxes. The first new idea since SafeMoon.",
-		},
-		{
-			name: "keywords",
-			content: "nitrogen, nitro, token, crypto, cryptocurrency, deflationary, hyper-deflationary, safemoon",
-		},
-		{ name: "theme-color", content: "#18181b" },
-		{ name: "color-scheme", content: "dark" },
-		{
-			property: "og:image",
-			content: "/logo.svg",
-		},
-		{
-			property: "og:title",
-			content: "Nitrogen - $NITRO",
-		},
-		{
-			property: "og:description",
-			content: "Nitrogen is a hyper-deflationary token with 0% trade taxes. The first new idea since SafeMoon.",
-		},
-		{
-			property: "og:url",
-			content: "https://nitrogen.app",
-		},
-	],
-});
 
 const buttons = [
 	{ name: "Buy $NITRO", link: "#buy", icon: CurrencyDollarIcon },
@@ -72,9 +40,16 @@ const cards = [
 
 	{
 		title: "Create diamond hands",
-		label: "Another unique feature we have invented and developed will only allow users to earn rewards on their $NITRO after they have held it for a certain amount of time, called the \"preliminary phase\" This will encourage users to hold their tokens for longer periods of time, creating diamond hands.",
-		icon: QuestionMarkCircleIcon,
+		label: 'Another unique feature we have invented and developed will only allow users to earn rewards on their $NITRO after they have held it for a certain amount of time, called the "preliminary phase" This will encourage users to hold their tokens for longer periods of time, creating diamond hands.',
+		icon: BoltIcon,
 	},
+];
+
+const steps = [
+	{ label: "Check charts", icon: ChartBarSquareIcon, done: true },
+	{ label: "Buy $NITRO", icon: BanknotesIcon, done: false },
+	{ label: "Stake $NITRO", icon: LockClosedIcon, done: false },
+	{ label: "Earn $NITRO", icon: WalletIcon, done: false },
 ];
 
 const firstRow = <typeof cards>[],
@@ -127,7 +102,10 @@ for (var i = 0; i < cards.length; i++) {
 			</div>
 		</div>
 
-		<div class="flex flex-col w-10/12 mx-auto mt-10 space-y-6 lg:space-y-0 lg:space-x-8 lg:flex-row lg:w-8/12">
+		<div
+			id="how"
+			class="flex flex-col w-10/12 mx-auto mt-10 space-y-6 lg:space-y-0 lg:space-x-8 lg:flex-row lg:w-8/12"
+		>
 			<div
 				class="w-full px-5 py-6 mx-auto overflow-hidden bg-purple-500 lg:w-[70%] lg:px-10 rounded-3xl lg:py-10"
 			>
@@ -141,8 +119,8 @@ for (var i = 0; i < cards.length; i++) {
 					</p>
 
 					<p>
-						This means that we can still tax transactions at <strong>0 cost to the trader.</strong> The tax rate is 50% of
-						the <code>$NITRO</code> trade value. The 50% is broken down as follows:
+						This means that we can still tax transactions at <strong>0 cost to the trader.</strong> The tax
+						rate is 50% of the <code>$NITRO</code> trade value. The 50% is broken down as follows:
 					</p>
 
 					<ul class="self-start ml-4 list-disc">
@@ -160,50 +138,70 @@ for (var i = 0; i < cards.length; i++) {
 				<p class="text-2xl font-semibold tracking-tight lg:text-3xl">Next steps</p>
 
 				<div class="justify-center">
-					<div class="flex flex-row items-start space-x-3">
+					<div class="flex flex-row items-start space-x-3" v-for="(step, index) in steps">
 						<div class="flex flex-col">
-							<ChartBarSquareIcon class="w-10 h-10 p-2 text-white bg-indigo-500 rounded-full" />
+							<component
+								:is="step.icon"
+								:class="step.done ? 'bg-indigo-500' : 'bg-indigo-300'"
+								class="w-10 h-10 p-2 text-white rounded-full"
+							/>
 
-							<span class="w-0.5 h-6 -mt-1 bg-indigo-500 mx-auto" />
+							<span
+								v-if="index !== steps.length - 1"
+								:class="step.done ? 'bg-indigo-500' : 'bg-indigo-300'"
+								class="w-0.5 h-6 -mt-1 mx-auto"
+							/>
 						</div>
 
-						<p class="mt-1.5 text-white">Check charts</p>
-					</div>
-
-					<div class="flex flex-row items-start space-x-3">
-						<div class="flex flex-col">
-							<BanknotesIcon class="w-10 h-10 p-2 text-white bg-indigo-300 rounded-full" />
-
-							<span class="w-0.5 h-6 -mt-1 bg-indigo-300 mx-auto" />
-						</div>
-
-						<p class="mt-1.5 text-white">Buy $NITRO</p>
-					</div>
-
-					<div class="flex flex-row items-start space-x-3">
-						<div class="flex flex-col">
-							<LockClosedIcon class="w-10 h-10 p-2 text-white bg-indigo-300 rounded-full" />
-
-							<span class="w-0.5 h-6 -mt-1 bg-indigo-300 mx-auto" />
-						</div>
-
-						<p class="mt-1.5 text-white">Stake $NITRO</p>
-					</div>
-
-					<div class="flex flex-row items-start space-x-3">
-						<WalletIcon class="w-10 h-10 p-2 text-white bg-indigo-300 rounded-full" />
-
-						<p class="mt-1.5 text-white">Earn $NITRO</p>
+						<p class="mt-1.5 text-white">{{ step.label }}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="w-10/12 pb-12 mx-auto lg:w-8/12">
+		<div class="w-10/12 mx-auto lg:w-8/12" id="features">
 			<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 				<div class="space-y-6" v-for="row in [firstRow, secondRow]">
 					<Card v-for="{ title, label, icon } in row" :name="title" :description="label" :icon="icon" />
 				</div>
+			</div>
+		</div>
+
+		<div class="pb-20">
+			<div
+				class="w-10/12 px-6 relative items-center flex flex-col space-y-6 overflow-hidden lg:w-8/12 bg-[#27272a] bg-opacity-30 rounded-3xl text-center mx-auto py-16 shadow-2xl shadow-[#4f4e4e05]"
+				id="cta"
+			>
+				<h1 class="text-2xl font-semibold text-white lg:text-3xl">What are you waiting for?</h1>
+
+				<p class="text-[15px] lg:text-[17px] text-white text-opacity-80">
+					Don't miss out on any update by joining our Telegram channel.
+					<br />
+					Or you can follow us on Twitter. You choose.
+				</p>
+
+				<div class="flex flex-row items-center space-x-2">
+					<a
+						href="#"
+						class="text-black flex flex-row w-fit space-x-1.5 items-center bg-white hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-gray-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+					>
+						<img src="/icons/twitter.svg" class="w-4 h-4" />
+						<span>Twitter</span>
+					</a>
+
+					<a
+						href="#"
+						class="text-black w-fit flex flex-row space-x-1.5 items-center bg-white hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-gray-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+					>
+						<img src="/icons/telegram.svg" class="w-5 h-5" />
+						<span>Telegram</span>
+					</a>
+				</div>
+
+				<img
+					src="/wave.svg"
+					class="w-[64rem] pointer-events-none -top-1/2 lg:-top-[110%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
+				/>
 			</div>
 		</div>
 	</div>
