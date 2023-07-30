@@ -52,6 +52,11 @@ const steps = [
 	{ label: "Earn $NITRO", icon: WalletIcon, done: false },
 ];
 
+const socials = [
+	{ name: "Twitter", icon: "twitter.svg" },
+	{ name: "Telegram", icon: "telegram.svg" },
+];
+
 const firstRow = <typeof cards>[],
 	secondRow = <typeof cards>[];
 
@@ -182,19 +187,12 @@ for (var i = 0; i < cards.length; i++) {
 
 				<div class="flex flex-row items-center space-x-2">
 					<a
+						v-for="social in socials"
 						href="#"
 						class="text-black flex flex-row w-fit space-x-1.5 items-center bg-white hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-gray-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
 					>
-						<img src="/icons/twitter.svg" class="w-4 h-4" />
-						<span>Twitter</span>
-					</a>
-
-					<a
-						href="#"
-						class="text-black w-fit flex flex-row space-x-1.5 items-center bg-white hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-gray-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
-					>
-						<img src="/icons/telegram.svg" class="w-5 h-5" />
-						<span>Telegram</span>
+						<img :src="`/icons/${social.icon}`" class="w-4 h-4" />
+						<span>{{ social.name }}</span>
 					</a>
 				</div>
 
