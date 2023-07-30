@@ -50,7 +50,7 @@ const Button = () => {
 	</div>
 
 	<div
-		:class="menuVisibility && 'opacity-100 translate-y-10'"
+		:class="{ 'opacity-100 translate-y-10': menuVisibility }"
 		class="absolute z-50 w-10/12 h-auto py-10 lg:hidden transition-all text-center -translate-x-1/2 opacity-0 left-1/2 rounded-3xl bg-[#18181b]"
 	>
 		<div class="flex flex-col items-center justify-center space-y-6 tracking-wide text-white lg:flex">
