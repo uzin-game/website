@@ -198,7 +198,7 @@ for (var i = 0; i < cards.length; i++) {
 
 				<img
 					src="/wave.svg"
-					class="w-[64rem] pointer-events-none -top-[10%] object-cover lg:object-contain lg:-top-[110%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
+					class="w-full pointer-events-none -top-[10%] object-cover lg:object-contain lg:-top-[110%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
 				/>
 			</div>
 		</div>
