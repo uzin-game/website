@@ -2,31 +2,30 @@ export default defineNuxtConfig({
 	devtools: { enabled: false },
 	modules: ["@nuxtjs/tailwindcss"],
 	css: ["~/assets/main.css"],
+
 	app: {
 		head: {
-			title: "Nitrogen - $NITRO",
+			title: "Uzin",
 			meta: [
 				{
 					name: "description",
-					content:
-						"Nitrogen is a hyper-deflationary token with 0% trade taxes. The first new idea since SafeMoon.",
+					content: "Uzin • Un jeu où la gestion rencontre la survie dans un monde hostile et évolutif.",
 				},
 				{
 					name: "keywords",
-					content:
-						"nitrogen, nitro, token, crypto, cryptocurrency, deflationary, hyper-deflationary, safemoon",
+					content: "uzin,factorio,videogame",
 				},
 				{ name: "theme-color", content: "#6b32f0" },
 				{ name: "color-scheme", content: "dark" },
 				{ property: "og:image", content: "/logo.png" },
-				{ property: "og:title", content: "Nitrogen - $NITRO" },
+				{ property: "og:title", content: "Uzin" },
 				{
 					property: "og:description",
-					content:
-						"Nitrogen is a hyper-deflationary token with 0% trade taxes. The first new idea since SafeMoon.",
+					content: "Un jeu où la gestion rencontre la survie dans un monde hostile et évolutif.",
 				},
-				{ property: "og:url", content: "https://nitrogen.app" },
 			],
 		},
 	},
+
+	compatibilityDate: "2025-01-10",
 });

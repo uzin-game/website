@@ -1,55 +1,54 @@
 <script setup lang="ts">
 import {
-	CurrencyDollarIcon,
-	ChartBarSquareIcon,
-	LockClosedIcon,
-	UserPlusIcon,
-	GiftIcon,
-	UserGroupIcon,
-	ArrowTrendingUpIcon,
-	BanknotesIcon,
-	WalletIcon,
-	BoltIcon,
+	BookOpenIcon,
+	PhotoIcon,
+	PuzzlePieceIcon,
+	CubeIcon,
+	ArrowDownTrayIcon,
+	DocumentIcon,
+    ShieldExclamationIcon,
+    GlobeEuropeAfricaIcon,
+	FaceSmileIcon,
+    Cog8ToothIcon
 } from "@heroicons/vue/24/solid";
 
 const buttons = [
-	{ name: "Buy $NITRO", link: "#buy", icon: CurrencyDollarIcon },
-	{ name: "Charts", link: "#", icon: ChartBarSquareIcon },
-	{ name: "Stake", link: "#", icon: LockClosedIcon },
-	{ name: "Join Telegram", link: "t.me/nitrogen", icon: UserPlusIcon },
+	{ name: "Télécharger", link: "#download", icon: ArrowDownTrayIcon },
+	{ name: "Documents", link: "#documents", icon: DocumentIcon },
 ];
 
 const cards = [
 	{
-		title: "Holder rewards",
-		label: "You may stake your $NITRO tokens for rewards using our custom-designed staking mechanism. Receive payouts in BNB and withdraw at anytime.",
-		icon: GiftIcon,
+		title: "Collectez efficacement dès le départ",
+		label: "Au début du jeu, concentrez-vous sur la collecte manuelle des ressources essentielles. Identifiez rapidement les gisements de matériaux précieux et optimisez vos trajets pour transporter le maximum possible.",
+		icon: CubeIcon,
 	},
 
 	{
-		title: "What goes up must come down slower...",
-		label: "With the nature of the new tax system, the price of the token will only decrease at 75% of the rate that it increases. This means that if there is the exact same amount of buy and sell volume, the price of the token will still be increasing instead of staying the same.",
-		icon: ArrowTrendingUpIcon,
+		title: "Automatisez pour prospérer",
+		label: "Dès que possible, construisez vos premières machines d'automatisation. Priorisez les chaînes de production simples avant de passer à des systèmes complexes. Plus vos infrastructures fonctionnent seules, plus vous pouvez vous concentrer sur l'exploration et la défense.",
+		icon: Cog8ToothIcon,
 	},
 
 	{
-		title: "Ambitious & Transparent Team",
-		label: "All funds used by the marketing wallet will be reported to the community to ensure ongoing trust. The marketing wallet will not just be used for marketing but for giveaways, promotions & further development. We have big dreams for Nitrogen and we'll be happy for you to join us.",
-		icon: UserGroupIcon,
+		title: "Défendez stratégiquement vos installations",
+		label: "La planète ne restera pas passive. Installez des défenses autour de vos usines dès qu'elles commencent à attirer l'attention des créatures locales. Analysez les points faibles de vos installations et renforcez-les avec des tourelles, des barrières, ou des mécanismes avancés.",
+		icon: ShieldExclamationIcon,
 	},
 
 	{
-		title: "Create diamond hands",
-		label: 'Another unique feature we have invented and developed will only allow users to earn rewards on their $NITRO after they have held it for a certain amount of time, called the "preliminary phase" This will encourage users to hold their tokens for longer periods of time, creating diamond hands.',
-		icon: BoltIcon,
+		title: "Explorez pour découvrir et progresser",
+		label: "Ne restez pas confiné à votre zone de départ. L'exploration vous permettra de découvrir des ressources rares, des technologies oubliées et des indices sur le passé mystérieux de la planète. Plus vous explorez, plus vous serez en mesure d'améliorer vos infrastructures et de débloquer des fonctionnalités avancées.",
+		icon: GlobeEuropeAfricaIcon,
 	},
 ];
 
 const steps = [
-	{ label: "Check charts", icon: ChartBarSquareIcon, done: true },
-	{ label: "Buy $NITRO", icon: BanknotesIcon, done: false },
-	{ label: "Stake $NITRO", icon: LockClosedIcon, done: false },
-	{ label: "Earn $NITRO", icon: WalletIcon, done: false },
+	{ label: "Lire le lore", icon: BookOpenIcon, done: true },
+	{ label: "Voir la gallerie", icon: PhotoIcon, done: false },
+	{ label: "Télécharger", icon: ArrowDownTrayIcon, done: false },
+	{ label: "Jouer", icon: PuzzlePieceIcon, done: false },
+	{ label: "S'amuser", icon: FaceSmileIcon, done: false },
 ];
 
 const socials = [
@@ -66,32 +65,31 @@ for (var i = 0; i < cards.length; i++) {
 </script>
 
 <template>
-	<div class="bg-[#18181b] h-full flex flex-col space-y-14 font-roobert overflow-x-hidden">
+	<div class="bg-[#18181b] h-full flex flex-col space-y-14 font-poppins overflow-x-hidden">
 		<Navbar />
 
 		<div class="relative flex flex-col items-center justify-center pt-14 mx-center">
-			<div class="flex flex-col text-center">
-				<h1 class="text-[40px] leading-9 font-semibold text-white lg:text-7xl lg:font-medium">
-					The first new idea
+			<div class="flex flex-col gap-y-2 text-center">
+				<h1
+					class="text-8xl font-semibold animate-text tracking-normal bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+				>
+					UZIN
 				</h1>
 
-				<h1
-					class="text-transparent text-[40px] lg:text-7xl font-semibold lg:font-medium bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400"
-				>
-					since SafeMoon
+				<h1 class="text-[40px] leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
+					Construisez, Automatisez, Survivez.
 				</h1>
 			</div>
 
 			<p class="px-5 text-xl text-center text-gray-400 mt-7 lg:px-0 lg:mt-10">
-				<span class="font-medium text-white">Nitrogen</span> is a
-				<span class="font-medium text-white">hyper-deflationary</span> token with
-				<span class="font-medium text-white">0%</span> trade taxes.
+				Un jeu où la <span class="font-medium text-white">gestion</span> rencontre la
+				<span class="font-medium text-white">survie</span> dans un monde hostile et évolutif.
 			</p>
 
 			<div class="flex flex-row flex-wrap justify-center w-4/5 mt-12 space-x-2 gap-y-2 lg:w-full">
 				<button
 					v-for="button in buttons"
-					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
+					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-purple-500 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
 				>
 					<div
 						class="relative px-5 py-2.5 flex flex-row space-x-1 transition-all ease-in duration-75 bg-gray-900 rounded-full group-hover:bg-opacity-0"
@@ -114,33 +112,35 @@ for (var i = 0; i < cards.length; i++) {
 			<div
 				class="w-full px-5 py-6 mx-auto overflow-hidden bg-purple-500 lg:w-[70%] lg:px-10 rounded-3xl lg:py-10"
 			>
-				<div class="flex flex-col items-center space-y-2 text-sm text-left text-white lg:text-base">
-					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">How does it work?</p>
+				<div class="flex flex-col items-center space-y-4 text-sm text-left text-white lg:text-base">
+					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À propos du jeu</p>
 
-					<p>
-						Instead of taxing users on their buy and sells, we have invented a process in which we tax
-						directly from the liquidity pool <i>after</i> the trade has been completed and the
-						<b>user has received 100% of the trade amount</b>.
-					</p>
+					<ul class="list-disc list-outside space-y-4">
+						<li>
+							Dans <i>Uzin</i>, vous incarnez un pionnier envoyé sur une planète mystérieuse, autrefois
+							habitée par une civilisation disparue. Ce monde, marqué par un écosystème hostile et
+							imprévisible, regorge de ressources précieuses et de structures anciennes empreintes de
+							mystère.
+						</li>
 
-					<p>
-						This means that we can still tax transactions at <strong>0 cost to the trader.</strong> The tax
-						rate is 50% of the <code>$NITRO</code> trade value. The 50% is broken down as follows:
-					</p>
+						<li>
+							Au fur et à mesure que vous bâtissez vos usines et automatisez vos processus pour survivre,
+							la planète réagit à votre présence. Des créatures redoutables et des pièges naturels
+							émergent pour protéger les secrets enfouis de ce lieu.
+						</li>
 
-					<ul class="self-start ml-4 list-disc">
-						<li>Automatic LP: 6%</li>
-						<li>Marketing: 6%</li>
-						<li>Staking Rewards: 6%</li>
-						<li>Automatic burn: 32%</li>
+						<li>
+							Chaque décision que vous prenez devient cruciale : progresserez-vous vers la prospérité, ou
+							succomberez-vous au chaos d'un environnement qui ne tolère aucune faiblesse ?
+						</li>
 					</ul>
 				</div>
 			</div>
 
 			<div
-				class="w-full px-5 py-6 mx-auto text-white bg-indigo-400 lg:w-[30%] lg:px-10 rounded-3xl space-y-5 lg:py-10 flex flex-col items-center"
+				class="w-full px-5 py-6 mx-auto text-white bg-indigo-400 lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
 			>
-				<p class="text-2xl font-semibold tracking-tight lg:text-3xl">Next steps</p>
+				<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À faire ensuite</p>
 
 				<div class="justify-center">
 					<div class="flex flex-row items-start space-x-3" v-for="(step, index) in steps">
@@ -177,24 +177,22 @@ for (var i = 0; i < cards.length; i++) {
 				class="w-10/12 px-6 relative items-center flex flex-col space-y-6 overflow-hidden lg:w-8/12 bg-[#27272a] bg-opacity-30 rounded-3xl text-center mx-auto py-16 shadow-2xl shadow-[#4f4e4e05]"
 				id="cta"
 			>
-				<h1 class="text-2xl font-semibold text-white lg:text-3xl">What are you waiting for?</h1>
+				<h1 class="text-2xl font-semibold text-white lg:text-3xl">Il ne reste plus qu'une chose à faire...</h1>
 
 				<p class="text-[15px] lg:text-[17px] text-white text-opacity-80">
-					Don't miss out on any update by joining our Telegram channel.
-					<br />
-					Or you can follow us on Twitter. You choose.
+					Le futur des jeux de gestion se trouve ici.
+					<br />Télécharge Uzin pour commencer ton aventure.
 				</p>
 
-				<div class="flex flex-row items-center space-x-2">
-					<a
-						v-for="social in socials"
-						href="#"
-						class="text-black flex flex-row w-fit space-x-1.5 items-center bg-white hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-gray-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
-					>
-						<img :src="`/icons/${social.icon}`" class="w-4 h-4" />
-						<span>{{ social.name }}</span>
-					</a>
-				</div>
+				<a
+					href="#"
+					class="text-black flex flex-row w-fit space-x-1.5 items-center bg-white hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-gray-300 font-semibold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+				>
+					<div class="flex flex-row space-x-2 items-center">
+						<ArrowDownTrayIcon class="w-4 h-4" />
+						<p>Télécharger</p>
+					</div>
+				</a>
 
 				<img
 					src="/wave.svg"

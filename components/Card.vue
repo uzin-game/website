@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FunctionalComponent } from "nuxt/dist/app/compat/capi";
+import type { FunctionalComponent } from "vue";
 
 const reset = "linear-gradient(transparent, transparent)";
 
@@ -38,7 +38,7 @@ defineProps<{
 				<p class="flex flex-row items-center space-x-2.5">
 					<component :is="icon" class="w-8 h-8 p-[4px] text-white bg-purple-500 rounded-lg" />
 					<span class="text-lg font-medium leading-6 text-white lg:text-xl">{{ name }}</span>
-                </p>
+				</p>
 
 				<p class="text-sm text-white text-opacity-80 lg:text-base">{{ description }}</p>
 			</div>

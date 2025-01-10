@@ -1,11 +1,10 @@
 <script setup lang="tsx">
-import { QuestionMarkCircleIcon, LightBulbIcon, PaperAirplaneIcon, LinkIcon, Bars3Icon } from "@heroicons/vue/24/solid";
+import { QuestionMarkCircleIcon, LightBulbIcon, PhotoIcon, Bars3Icon } from "@heroicons/vue/24/solid";
 
 const items = [
-	{ name: "How does it work?", icon: QuestionMarkCircleIcon, url: "#how" },
-	{ name: "Features", icon: LightBulbIcon, url: "#features" },
-	{ name: "Twitter", icon: LinkIcon, url: "#twitter" },
-	{ name: "Telegram", icon: PaperAirplaneIcon, url: "#telegram" },
+	{ name: "À propos", icon: QuestionMarkCircleIcon, url: "#about" },
+	{ name: "Conseils", icon: LightBulbIcon, url: "#features" },
+	{ name: "Gallerie", icon: PhotoIcon, url: "#gallery" },
 ];
 
 const menuVisibility = ref(false);
@@ -28,7 +27,7 @@ const Button = () => {
 			type="button"
 			class="px-4 py-2 mb-2 text-sm font-medium text-white transition-colors rounded-lg lg:block focus:outline-none hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 ring-2 ring-purple-600 ring-opacity-70"
 		>
-			Buy $NITRO
+			Jouer
 		</button>
 	);
 };
@@ -57,7 +56,7 @@ const Button = () => {
 			<div class="flex flex-row items-center space-x-2">
 				<img class="w-7 h-7" src="/logo.svg" />
 
-				<p class="text-xl font-semibold">Nitrogen</p>
+				<p class="text-xl font-semibold">Uzin</p>
 			</div>
 
 			<div class="space-y-2">

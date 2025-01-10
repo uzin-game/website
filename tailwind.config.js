@@ -2,10 +2,12 @@
 module.exports = {
 	content: ["./app.vue", "./src/**/*.vue"],
 	safelist: ["lg:col-span-2", "lg:col-span-1"],
+	plugins: [],
 	theme: {
 		extend: {
 			animation: {
 				blob: "blob 7s infinite",
+				text: "text 8s ease infinite",
 			},
 			keyframes: {
 				blob: {
@@ -22,10 +24,22 @@ module.exports = {
 						transform: "tranlate(0px, 0px) scale(1)",
 					},
 				},
+
+				text: {
+					"0%, 100%": {
+						"background-size": "200% 200%",
+						"background-position": "left center",
+					},
+					"50%": {
+						"background-size": "200% 200%",
+						"background-position": "right center",
+					},
+				},
 			},
 		},
 		fontFamily: {
-			roobert: ["roobert", "sans-serif"],
+            poppins: ["Poppins", "sans-serif"],
+			geist: ["geist", "sans-serif"],
 		},
 	},
 };
