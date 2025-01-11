@@ -115,7 +115,7 @@ for (var i = 0; i < cards.length; i++) {
 				<div class="flex flex-col items-center space-y-4 text-sm text-left text-white lg:text-base">
 					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À propos du jeu</p>
 
-					<ul class="list-disc list-outside text-sm space-y-4">
+					<ul class="list-disc list-outside text-sm space-y-4 lg:text-base">
 						<li>
 							Dans <i>Uzin</i>, vous incarnez un pionnier envoyé sur une planète mystérieuse, autrefois
 							habitée par une civilisation disparue. Ce monde, marqué par un écosystème hostile et
@@ -144,7 +144,7 @@ for (var i = 0; i < cards.length; i++) {
 
 				<div class="justify-center">
 					<div class="flex flex-row items-start space-x-3" v-for="(step, index) in steps">
-						<div class="flex flex-col text-sm">
+						<div class="flex flex-col">
 							<component
 								:is="step.icon"
 								:class="step.done ? 'bg-indigo-500' : 'bg-indigo-300'"
@@ -158,7 +158,7 @@ for (var i = 0; i < cards.length; i++) {
 							/>
 						</div>
 
-						<p class="mt-1.5 text-white">{{ step.label }}</p>
+						<p class="mt-1.5  text-white text-sm lg:text-base">{{ step.label }}</p>
 					</div>
 				</div>
 			</div>
