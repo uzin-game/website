@@ -40,7 +40,7 @@ defineProps<{
 					<span class="text-lg font-medium leading-6 text-white lg:text-xl">{{ name }}</span>
 				</p>
 
-				<p class="text-sm text-white text-opacity-80 lg:text-base">{{ description }}</p>
+				<p class="text-xs text-white text-opacity-80 lg:text-base">{{ description }}</p>
 			</div>
 		</div>
 	</div>

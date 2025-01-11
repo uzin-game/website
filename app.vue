@@ -6,10 +6,10 @@ import {
 	CubeIcon,
 	ArrowDownTrayIcon,
 	DocumentIcon,
-    ShieldExclamationIcon,
-    GlobeEuropeAfricaIcon,
+	ShieldExclamationIcon,
+	GlobeEuropeAfricaIcon,
 	FaceSmileIcon,
-    Cog8ToothIcon
+	Cog8ToothIcon,
 } from "@heroicons/vue/24/solid";
 
 const buttons = [
@@ -76,20 +76,20 @@ for (var i = 0; i < cards.length; i++) {
 					Uzin
 				</h1>
 
-				<h1 class="text-3xl px-2 leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
+				<h1 class="text-lg px-2 leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
 					Construisez, Automatisez, Survivez.
 				</h1>
 			</div>
 
-			<p class="px-5 text-lg lg:text-xl text-center text-gray-400 mt-7 lg:px-0 lg:mt-10">
+			<p class="px-5 text-base lg:text-xl text-center text-gray-400 mt-7 lg:px-0 lg:mt-10">
 				Un jeu où la <span class="font-medium text-white">gestion</span> rencontre la
 				<span class="font-medium text-white">survie</span> dans un monde hostile et évolutif.
 			</p>
 
-			<div class="flex flex-row flex-wrap justify-center w-4/5 mt-12 gap-x-2 gap-y-2 lg:w-full">
+			<div class="flex flex-row w-full flex-wrap justify-center mt-12 gap-x-2 gap-y-2 lg:w-full">
 				<button
 					v-for="button in buttons"
-					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-purple-500 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
+					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
 				>
 					<div
 						class="relative px-5 py-2.5 flex flex-row space-x-1 transition-all ease-in duration-75 bg-gray-900 rounded-full group-hover:bg-opacity-0"
@@ -115,7 +115,7 @@ for (var i = 0; i < cards.length; i++) {
 				<div class="flex flex-col items-center space-y-4 text-sm text-left text-white lg:text-base">
 					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À propos du jeu</p>
 
-					<ul class="list-disc list-outside text-sm space-y-4 lg:text-base">
+					<ul class="list-disc list-outside text-justify text-xs space-y-4 lg:text-base">
 						<li>
 							Dans <i>Uzin</i>, vous incarnez un pionnier envoyé sur une planète mystérieuse, autrefois
 							habitée par une civilisation disparue. Ce monde, marqué par un écosystème hostile et
@@ -138,27 +138,29 @@ for (var i = 0; i < cards.length; i++) {
 			</div>
 
 			<div
-				class="w-full px-5 py-6 mx-auto text-white bg-indigo-400 lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
+				class="w-full px-5 py-6 mx-auto text-white bg-pink-500 lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
 			>
 				<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À faire ensuite</p>
 
 				<div class="justify-center">
-					<div class="flex flex-row items-start space-x-3" v-for="(step, index) in steps">
+					<div class="flex flex-col" v-for="(step, index) in steps">
 						<div class="flex flex-col">
-							<component
-								:is="step.icon"
-								:class="step.done ? 'bg-indigo-500' : 'bg-indigo-300'"
-								class="w-10 h-10 p-2 text-white rounded-full"
-							/>
+							<div class="flex flex-row space-x-3 items-center">
+								<component
+									:is="step.icon"
+									:class="step.done ? 'bg-pink-600' : 'bg-pink-400'"
+									class="w-10 h-10 p-2 text-white rounded-full"
+								/>
+
+								<p class="text-white text-xs lg:text-base">{{ step.label }}</p>
+							</div>
 
 							<span
 								v-if="index !== steps.length - 1"
-								:class="step.done ? 'bg-indigo-500' : 'bg-indigo-300'"
-								class="w-0.5 h-6 -mt-1 mx-auto"
+								:class="step.done ? 'bg-pink-600' : 'bg-pink-400'"
+								class="w-0.5 h-6 -mt-1 ml-[19.5px]"
 							/>
 						</div>
-
-						<p class="mt-1.5  text-white text-sm lg:text-base">{{ step.label }}</p>
 					</div>
 				</div>
 			</div>
@@ -179,7 +181,7 @@ for (var i = 0; i < cards.length; i++) {
 			>
 				<h1 class="text-2xl font-semibold text-white lg:text-3xl">Alors ? Convaincu ?</h1>
 
-				<p class="text-[15px] lg:text-[17px] text-white text-opacity-80">
+				<p class="text-xs lg:text-base text-white text-opacity-80">
 					Le futur des jeux de gestion se trouve ici.
 					<br />Commencez votre aventure aujourd'hui.
 				</p>
@@ -196,7 +198,7 @@ for (var i = 0; i < cards.length; i++) {
 
 				<img
 					src="/wave.svg"
-					class="w-full pointer-events-none -top-[10%] object-cover lg:object-contain lg:-top-[110%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
+					class="w-full pointer-events-none -top-[125%] object-cover lg:object-contain lg:-top-[120%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
 				/>
 			</div>
 		</div>
