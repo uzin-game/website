@@ -19,25 +19,25 @@ const buttons = [
 
 const cards = [
 	{
-		title: "Collectez efficacement dès le départ",
+		title: "Collectez",
 		label: "Au début du jeu, concentrez-vous sur la collecte manuelle des ressources essentielles. Identifiez rapidement les gisements de matériaux précieux et optimisez vos trajets pour transporter le maximum possible.",
 		icon: CubeIcon,
 	},
 
 	{
-		title: "Automatisez pour prospérer",
+		title: "Automatisez",
 		label: "Dès que possible, construisez vos premières machines d'automatisation. Priorisez les chaînes de production simples avant de passer à des systèmes complexes. Plus vos infrastructures fonctionnent seules, plus vous pouvez vous concentrer sur l'exploration et la défense.",
 		icon: Cog8ToothIcon,
 	},
 
 	{
-		title: "Défendez stratégiquement vos installations",
+		title: "Défendez",
 		label: "La planète ne restera pas passive. Installez des défenses autour de vos usines dès qu'elles commencent à attirer l'attention des créatures locales. Analysez les points faibles de vos installations et renforcez-les avec des tourelles, des barrières, ou des mécanismes avancés.",
 		icon: ShieldExclamationIcon,
 	},
 
 	{
-		title: "Explorez pour découvrir et progresser",
+		title: "Explorez",
 		label: "Ne restez pas confiné à votre zone de départ. L'exploration vous permettra de découvrir des ressources rares, des technologies oubliées et des indices sur le passé mystérieux de la planète. Plus vous explorez, plus vous serez en mesure d'améliorer vos infrastructures et de débloquer des fonctionnalités avancées.",
 		icon: GlobeEuropeAfricaIcon,
 	},
@@ -71,22 +71,22 @@ for (var i = 0; i < cards.length; i++) {
 		<div class="relative flex flex-col items-center justify-center pt-14 mx-center">
 			<div class="flex flex-col gap-y-2 text-center">
 				<h1
-					class="text-8xl font-semibold animate-text tracking-normal bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+					class="text-7xl lg:text-8xl font-semibold animate-text tracking-normal bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
 				>
-					UZIN
+					Uzin
 				</h1>
 
-				<h1 class="text-[40px] leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
+				<h1 class="text-3xl px-2 leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
 					Construisez, Automatisez, Survivez.
 				</h1>
 			</div>
 
-			<p class="px-5 text-xl text-center text-gray-400 mt-7 lg:px-0 lg:mt-10">
+			<p class="px-5 text-lg lg:text-xl text-center text-gray-400 mt-7 lg:px-0 lg:mt-10">
 				Un jeu où la <span class="font-medium text-white">gestion</span> rencontre la
 				<span class="font-medium text-white">survie</span> dans un monde hostile et évolutif.
 			</p>
 
-			<div class="flex flex-row flex-wrap justify-center w-4/5 mt-12 space-x-2 gap-y-2 lg:w-full">
+			<div class="flex flex-row flex-wrap justify-center w-4/5 mt-12 gap-x-2 gap-y-2 lg:w-full">
 				<button
 					v-for="button in buttons"
 					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-purple-500 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
@@ -115,7 +115,7 @@ for (var i = 0; i < cards.length; i++) {
 				<div class="flex flex-col items-center space-y-4 text-sm text-left text-white lg:text-base">
 					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À propos du jeu</p>
 
-					<ul class="list-disc list-outside space-y-4">
+					<ul class="list-disc list-outside text-sm space-y-4">
 						<li>
 							Dans <i>Uzin</i>, vous incarnez un pionnier envoyé sur une planète mystérieuse, autrefois
 							habitée par une civilisation disparue. Ce monde, marqué par un écosystème hostile et
@@ -144,7 +144,7 @@ for (var i = 0; i < cards.length; i++) {
 
 				<div class="justify-center">
 					<div class="flex flex-row items-start space-x-3" v-for="(step, index) in steps">
-						<div class="flex flex-col">
+						<div class="flex flex-col text-sm">
 							<component
 								:is="step.icon"
 								:class="step.done ? 'bg-indigo-500' : 'bg-indigo-300'"
@@ -177,11 +177,11 @@ for (var i = 0; i < cards.length; i++) {
 				class="w-10/12 px-6 relative items-center flex flex-col space-y-6 overflow-hidden lg:w-8/12 bg-[#27272a] bg-opacity-30 rounded-3xl text-center mx-auto py-16 shadow-2xl shadow-[#4f4e4e05]"
 				id="cta"
 			>
-				<h1 class="text-2xl font-semibold text-white lg:text-3xl">Il ne reste plus qu'une chose à faire...</h1>
+				<h1 class="text-2xl font-semibold text-white lg:text-3xl">Alors ? Convaincu ?</h1>
 
 				<p class="text-[15px] lg:text-[17px] text-white text-opacity-80">
 					Le futur des jeux de gestion se trouve ici.
-					<br />Télécharge Uzin pour commencer ton aventure.
+					<br />Commencez votre aventure aujourd'hui.
 				</p>
 
 				<a

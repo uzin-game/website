@@ -34,7 +34,7 @@ const Button = () => {
 </script>
 
 <template>
-	<div class="w-11/12 h-20 mx-auto lg:w-9/12">
+	<div class="w-11/12 h-20 mx-auto lg:w-9/12 bg-blur">
 		<div class="flex flex-row items-center justify-between py-5">
 			<img src="/logo.svg" />
 
