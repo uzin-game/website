@@ -38,7 +38,7 @@ module.exports = {
 			},
 		},
 		fontFamily: {
-            poppins: ["Poppins", "sans-serif"],
+			poppins: ["Poppins", "sans-serif"],
 			geist: ["geist", "sans-serif"],
 		},
 	},

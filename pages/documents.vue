@@ -29,7 +29,7 @@ const documents = [
 		<Navbar />
 
 		<div class="py-24 space-y-20">
-			<h2 class="text-4xl font-bold tracking-tight sm:text-5xl text-pink-500 justify-self-center">Documents</h2>
+			<h2 class="text-4xl font-bold tracking-tight sm:text-5xl text-pink-500 text-center w-full">Documents</h2>
 
 			<div class="grid grid-cols-1 px-8 lg:grid-cols-2 max-w-5xl mx-auto gap-5">
 				<a target="_blank" :href v-for="{ description, name, icon, href } in documents">
