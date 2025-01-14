@@ -6,19 +6,19 @@ const documents = [
 		name: "Cahier des charges fonctionnel #1",
 		description:
 			"Premier cahier des charges rendu en Octobre 2024. Il comprend l'organisation et les premières idées du projet.",
-		href: "cdcf-1.pdf",
+		href: "/documents/cdcf-1.pdf",
 		icon: BookOpenIcon,
 	},
 	{
 		name: "Cahier des charges technique",
 		description: "Cahier des charges technique réalisé au début du projet, et rendu en Octobre 2024.",
-		href: "cdct.pdf",
+		href: "/documents/cdct.pdf",
 		icon: BookOpenIcon,
 	},
 	{
 		name: "Rapport soutenance n°1",
 		description: "Le rapport de soutenance n°1",
-		href: "rapport-1.pdf",
+		href: "/documents/rapport-1.pdf",
 		icon: MegaphoneIcon,
 	},
 ];
