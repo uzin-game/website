@@ -1,23 +1,24 @@
 <script setup lang="tsx">
-import { QuestionMarkCircleIcon, LightBulbIcon, PhotoIcon, Bars3Icon } from "@heroicons/vue/24/solid";
+import { NuxtLink } from "#components";
+import { Bars3Icon, HomeIcon, UserGroupIcon, DocumentDuplicateIcon } from "@heroicons/vue/24/solid";
 
 const items = [
-	{ name: "À propos", icon: QuestionMarkCircleIcon, url: "#about" },
-	{ name: "Conseils", icon: LightBulbIcon, url: "#features" },
-	{ name: "Gallerie", icon: PhotoIcon, url: "#gallery" },
+	{ name: "Accueil", icon: HomeIcon, url: "/" },
+	{ name: "Équipe", icon: UserGroupIcon, url: "/team" },
+	{ name: "Documents", icon: DocumentDuplicateIcon, url: "/documents" },
 ];
 
 const menuVisibility = ref(false);
 
 const Menu = () => {
 	return items.map((item) => (
-		<a
-			href={item.url}
+		<NuxtLink
+			to={item.url}
 			class="flex transition-colors cursor-pointer flex-row hover:text-purple-400 items-center space-x-1.5"
 		>
-			<item.icon class="w-6 h-6" />
+			<item.icon class="w-5 h-5" />
 			<p>{item.name}</p>
-		</a>
+		</NuxtLink>
 	));
 };
 

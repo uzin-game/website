@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import type { FunctionalComponent } from "vue";
 
+const props = defineProps<{
+	name: string;
+	description: string;
+	color: string;
+	icon: FunctionalComponent;
+}>();
+
+const { color } = toRefs(props);
+
 const reset = "linear-gradient(transparent, transparent)";
 
 const borderImage = ref(reset);
@@ -17,14 +26,12 @@ const move = (e: MouseEvent) => {
 	const x = e.clientX - rect.left;
 	const y = e.clientY - rect.top;
 
-	borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(147 51 234) 0, rgb(147 51 234) 50%, transparent 100%)`;
+	if (color.value === "pink") {
+		borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(236 72 153) 0, rgb(236 72 153) 50%, transparent 100%)`;
+	} else {
+		borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(147 51 234) 0, rgb(147 51 234) 50%, transparent 100%)`;
+	}
 };
-
-defineProps<{
-	name: string;
-	description: string;
-	icon: FunctionalComponent;
-}>();
 </script>
 
 <template>
@@ -36,7 +43,11 @@ defineProps<{
 		<div class="p-6">
 			<div class="flex flex-col space-y-2">
 				<p class="flex flex-row items-center space-x-2.5">
-					<component :is="icon" class="w-8 h-8 p-[4px] text-white bg-purple-500 rounded-lg" />
+					<component
+						:is="icon"
+						:class="color === 'pink' ? 'bg-pink-500' : 'bg-purple-500'"
+						class="w-8 h-8 p-[4px] text-white rounded-lg"
+					/>
 					<span class="text-lg font-medium leading-6 text-white lg:text-xl">{{ name }}</span>
 				</p>
 
