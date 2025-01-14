@@ -174,7 +174,7 @@ for (var i = 0; i < cards.length; i++) {
 				class="w-10/12 px-6 relative items-center flex flex-col space-y-6 overflow-hidden lg:w-8/12 bg-[#27272a] bg-opacity-30 rounded-3xl text-center mx-auto py-16 shadow-2xl shadow-[#4f4e4e05]"
 				id="cta"
 			>
-				<h1 class="text-2xl font-semibold text-white lg:text-3xl">Alors ? Convaincu ?</h1>
+				<h1 class="text-2xl font-semibold text-white lg:text-3xl">À vous de jouer !</h1>
 
 				<p class="text-xs lg:text-base text-white text-opacity-80">
 					Le futur des jeux de gestion se trouve ici.
