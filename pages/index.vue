@@ -41,7 +41,7 @@ const cards = [
 
 const steps = [
 	{ label: "Lire le lore", icon: BookOpenIcon, done: true },
-	{ label: "Voir la gallerie", icon: PhotoIcon, done: false },
+	{ label: "Voir la galerie", icon: PhotoIcon, done: false },
 	{ label: "Télécharger", icon: ArrowDownTrayIcon, done: false },
 	{ label: "Jouer", icon: PuzzlePieceIcon, done: false },
 	{ label: "S'amuser", icon: FaceSmileIcon, done: false },
