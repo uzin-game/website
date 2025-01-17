@@ -3,9 +3,9 @@ import { BookOpenIcon, MegaphoneIcon, ListBulletIcon } from "@heroicons/vue/24/s
 
 const documents = [
 	{
-		name: "Cahier des charges fonctionnel #1",
+		name: "Cahier des charges fonctionnel n°1",
 		description:
-			"Premier cahier des charges rendu en Octobre 2024. Il comprend l'organisation et les premières idées du projet.",
+			"Cahier des charges rendu en Octobre 2024. Il développe les premières idées du projet.",
 		href: "/documents/cdcf-1.pdf",
 		icon: BookOpenIcon,
 	},
@@ -18,7 +18,7 @@ const documents = [
 	{
 		name: "Rapport de soutenance n°1",
 		description:
-			"Ce rapport de soutenance présente de manière détaillée l'ensemble des travaux réalisés depuis la validation du cahier des charges.",
+			"Ce rapport présente les tâches réalisées depuis la validation du cahier des charges.",
 		href: "/documents/rapport-1.pdf",
 		icon: MegaphoneIcon,
 	},
