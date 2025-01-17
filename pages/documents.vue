@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BookOpenIcon, MegaphoneIcon } from "@heroicons/vue/24/solid";
+import { BookOpenIcon, MegaphoneIcon, ListBulletIcon } from "@heroicons/vue/24/solid";
 
 const documents = [
 	{
@@ -16,10 +16,18 @@ const documents = [
 		icon: BookOpenIcon,
 	},
 	{
-		name: "Rapport soutenance n°1",
-		description: "Le rapport de soutenance n°1",
+		name: "Rapport de soutenance n°1",
+		description:
+			"Ce rapport de soutenance présente de manière détaillée l'ensemble des travaux réalisés depuis la validation du cahier des charges.",
 		href: "/documents/rapport-1.pdf",
 		icon: MegaphoneIcon,
+	},
+	{
+		name: "Plan de soutenance n°1",
+		description:
+			"Le plan de soutenance liste les différents aspects du projet évoqués au cours de notre présentation.",
+		href: "/documents/plan-1.pdf",
+		icon: ListBulletIcon,
 	},
 ];
 </script>
