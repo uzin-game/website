@@ -37,7 +37,7 @@ const Button = () => {
 <template>
 	<div class="w-11/12 h-20 mx-auto lg:w-9/12 bg-blur">
 		<div class="flex flex-row items-center justify-between py-5">
-			<img src="/logo.svg" />
+			<img src="/logo.png" class="w-16 shadow-xl h-16" />
 
 			<div class="flex-row hidden gap-8 tracking-wide text-white lg:flex">
 				<Menu />

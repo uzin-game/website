@@ -11,6 +11,11 @@ import {
 	Cog8ToothIcon,
 } from "@heroicons/vue/24/solid";
 
+defineProps<{
+	prevIcon?: string;
+	nextIcon?: string;
+}>();
+
 const buttons = [{ name: "Télécharger", link: "#download", icon: ArrowDownTrayIcon }];
 
 const cards = [
@@ -53,6 +58,8 @@ const firstRow = <typeof cards>[],
 for (var i = 0; i < cards.length; i++) {
 	(i % 2 == 0 ? firstRow : secondRow).push(cards[i]);
 }
+
+const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screenshots/menu.png"];
 </script>
 
 <template>
@@ -96,7 +103,18 @@ for (var i = 0; i < cards.length; i++) {
 			</div>
 		</div>
 
-		<div class="flex flex-col w-10/12 mx-auto mt-10 space-y-6 lg:space-y-0 lg:space-x-8 lg:flex-row lg:w-8/12">
+		<UCarousel
+			v-slot="{ item }"
+			arrows
+			:prev-icon="prevIcon"
+			:next-icon="nextIcon"
+			:items="items"
+			class="w-full lg:max-w-3xl mx-auto"
+		>
+			<img :src="item" width="800px" height="800px" class="rounded-lg" />
+		</UCarousel>
+
+		<div class="flex flex-col w-10/12 mx-auto mt-10 gap-y-6 lg:gap-y-0 lg:gap-x-8 lg:flex-row lg:w-8/12">
 			<div
 				class="w-full px-5 py-6 mx-auto overflow-hidden bg-purple-500 lg:w-[70%] lg:px-10 rounded-3xl lg:py-10"
 			>
@@ -193,7 +211,7 @@ for (var i = 0; i < cards.length; i++) {
 
 				<img
 					src="/wave.svg"
-					class="w-full pointer-events-none -top-[125%] object-cover lg:object-contain lg:-top-[120%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
+					class="w-full pointer-events-none -top-[125%] object-cover lg:object-contain lg:-top-[100%] -translate-x-1/2 left-1/2 blur-xl h-[64rem] absolute opacity-20"
 				/>
 			</div>
 		</div>
