@@ -109,7 +109,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 			:prev-icon="prevIcon"
 			:next-icon="nextIcon"
 			:items="items"
-			class="w-full lg:max-w-3xl mx-auto"
+			class="w-full max-w-sm lg:max-w-3xl mx-auto"
 		>
 			<img :src="item" width="800px" height="800px" class="rounded-lg" />
 		</UCarousel>
