@@ -72,7 +72,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png"];
 			></div>
 
 			<div class="flex flex-col gap-y-12 text-center">
-				<img src="/logo_transparent.png" class="w-sm h-auto mx-auto" />
+				<img src="/logo_transparent.png" class="w-[275px] lg:w-sm h-auto mx-auto" />
 
 				<h1 class="text-lg px-2 leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
 					Construisez, Automatisez, Survivez.
@@ -106,7 +106,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png"];
 			:prev-icon="prevIcon"
 			:next-icon="nextIcon"
 			:items="items"
-			class="w-full max-w-sm lg:max-w-3xl mx-auto"
+			class="w-[280px] lg:w-full max-w-sm lg:max-w-3xl mx-auto"
 		>
 			<img :src="item" width="800px" height="800px" class="rounded-lg" />
 		</UCarousel>
