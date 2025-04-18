@@ -59,7 +59,7 @@ for (var i = 0; i < cards.length; i++) {
 	(i % 2 == 0 ? firstRow : secondRow).push(cards[i]);
 }
 
-const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screenshots/menu.png"];
+const items = ["/screenshots/screen2.png", "/screenshots/screen1.png"];
 </script>
 
 <template>
