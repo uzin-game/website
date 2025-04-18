@@ -45,11 +45,11 @@ const cards = [
 ];
 
 const steps = [
-	{ label: "Lire le lore", icon: BookOpenIcon, done: true },
-	{ label: "Voir la galerie", icon: PhotoIcon, done: false },
-	{ label: "Télécharger", icon: ArrowDownTrayIcon, done: false },
-	{ label: "Jouer", icon: PuzzlePieceIcon, done: false },
-	{ label: "S'amuser", icon: FaceSmileIcon, done: false },
+	{ label: "Lire le lore", icon: BookOpenIcon},
+	{ label: "Voir la galerie", icon: PhotoIcon },
+	{ label: "Télécharger", icon: ArrowDownTrayIcon },
+	{ label: "Jouer", icon: PuzzlePieceIcon },
+	{ label: "S'amuser", icon: FaceSmileIcon },
 ];
 
 const firstRow = <typeof cards>[],
@@ -63,16 +63,16 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 </script>
 
 <template>
-	<div class="bg-[#18181b] h-full flex flex-col space-y-14 font-poppins overflow-x-hidden">
+	<div class="bg-[#18181b] h-full flex flex-col space-y-14 font-pixelify overflow-x-hidden">
 		<Navbar />
 
-		<div class="relative flex flex-col items-center justify-center pt-14 mx-center">
-			<div class="flex flex-col gap-y-2 text-center">
-				<h1
-					class="text-7xl lg:text-8xl font-semibold animate-text tracking-normal bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
-				>
-					Uzin
-				</h1>
+		<div class="relative flex flex-col items-center justify-center pt-14">
+			<div
+				class="absolute top-1/2 left-1/2 w-5xl h-96 rounded-full from-[#7f5381] to-[#eb9fe2] bg-gradient-to-r opacity-15 transform -translate-x-1/2 -translate-y-1/2 filter blur-3xl z-10"
+			></div>
+
+			<div class="flex flex-col gap-y-12 text-center">
+				<img src="/logo_transparent.png" class="w-sm h-auto mx-auto" />
 
 				<h1 class="text-lg px-2 leading-9 font-semibold text-white lg:text-5xl lg:font-medium">
 					Construisez, Automatisez, Survivez.
@@ -87,19 +87,16 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 			<div class="flex flex-row w-full flex-wrap justify-center mt-12 gap-x-2 gap-y-2 lg:w-full">
 				<button
 					v-for="button in buttons"
-					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-full group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
+					:key="button.name"
+					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-[#7f5381] to-[#eb9fe2] group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
 				>
 					<div
-						class="relative px-5 py-2.5 flex flex-row space-x-1 transition-all ease-in duration-75 bg-gray-900 rounded-full group-hover:bg-opacity-0"
+						class="relative px-5 py-2.5 flex flex-row space-x-1 transition-all ease-in duration-75 bg-gray-900 rounded-lg group-hover:bg-opacity-0"
 					>
 						<component :is="button.icon" class="w-5 h-5" />
 						<span>{{ button.name }}</span>
 					</div>
 				</button>
-			</div>
-
-			<div class="z-10">
-				<Bubbles />
 			</div>
 		</div>
 
@@ -116,7 +113,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 
 		<div class="flex flex-col w-10/12 mx-auto mt-10 gap-y-6 lg:gap-y-0 lg:gap-x-8 lg:flex-row lg:w-8/12">
 			<div
-				class="w-full px-5 py-6 mx-auto overflow-hidden bg-purple-500 lg:w-[70%] lg:px-10 rounded-3xl lg:py-10"
+				class="w-full px-5 py-6 mx-auto overflow-hidden bg-[#7f5381] lg:w-[70%] lg:px-10 rounded-3xl lg:py-10"
 			>
 				<div class="flex flex-col items-center space-y-4 text-sm text-left text-white lg:text-base">
 					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À propos du jeu</p>
@@ -145,7 +142,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 			</div>
 
 			<div
-				class="w-full px-5 py-6 mx-auto text-white bg-pink-500 lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
+				class="w-full px-5 py-6 mx-auto text-white bg-[#eb9fe2] lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
 			>
 				<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À faire ensuite</p>
 
@@ -155,8 +152,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 							<div class="flex flex-row space-x-3 items-center">
 								<component
 									:is="step.icon"
-									:class="step.done ? 'bg-pink-600' : 'bg-pink-400'"
-									class="w-10 h-10 p-2 text-white rounded-full"
+									class="w-10 h-10 p-2 text-white bg-[#eb86cd] rounded-full"
 								/>
 
 								<p class="text-white text-xs lg:text-base">{{ step.label }}</p>
@@ -164,8 +160,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png", "/screens
 
 							<span
 								v-if="index !== steps.length - 1"
-								:class="step.done ? 'bg-pink-600' : 'bg-pink-400'"
-								class="w-0.5 h-6 -mt-1 ml-[19.5px]"
+								class="w-0.5 h-6 bg-[#eb86cd] -mt-1 ml-[19.5px]"
 							/>
 						</div>
 					</div>

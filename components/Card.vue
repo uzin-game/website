@@ -27,9 +27,9 @@ const move = (e: MouseEvent) => {
 	const y = e.clientY - rect.top;
 
 	if (color.value === "pink") {
-		borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(236 72 153) 0, rgb(236 72 153) 50%, transparent 100%)`;
+		borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(235,134,205) 0, rgb(235,134,205) 50%, transparent 100%)`;
 	} else {
-		borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(147 51 234) 0, rgb(147 51 234) 50%, transparent 100%)`;
+		borderImage.value = `radial-gradient(20% 75% at ${x}px ${y}px, rgb(127,83,129) 0, rgb(127,83,129) 50%, transparent 100%)`;
 	}
 };
 </script>
@@ -45,7 +45,7 @@ const move = (e: MouseEvent) => {
 				<p class="flex flex-row items-center space-x-2.5">
 					<component
 						:is="icon"
-						:class="color === 'pink' ? 'bg-pink-500' : 'bg-purple-500'"
+						:class="color === 'pink' ? 'bg-[#eb86cd]' : 'bg-[#7f5381]'"
 						class="w-8 h-8 p-[4px] text-white rounded-lg"
 					/>
 					<span class="text-lg font-medium leading-6 text-white lg:text-xl">{{ name }}</span>

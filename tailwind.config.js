@@ -5,6 +5,7 @@ export const plugins = [];
 export const theme = {
 	fontFamily: {
 		poppins: ["Poppins", "sans-serif"],
+        pixelify: ["Pixelify Sans", "sans-serif"],
 		geist: ["geist", "sans-serif"],
 	},
 };

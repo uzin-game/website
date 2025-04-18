@@ -30,11 +30,11 @@ const people = [
 </script>
 
 <template>
-	<div class="bg-[#18181b] h-screen flex flex-col font-poppins overflow-x-hidden">
+	<div class="bg-[#18181b] h-screen flex flex-col font-pixelify overflow-x-hidden">
 		<Navbar />
 
 		<div class="mx-auto py-24 px-0 sm:px-6 lg:px-24 space-y-20">
-			<h2 class="text-4xl font-bold text-purple-500 tracking-tight sm:text-5xl text-center w-full">
+			<h2 class="text-4xl font-bold text-[#eb86cd] tracking-tight sm:text-5xl text-center w-full">
 				Notre équipe
 			</h2>
 
@@ -49,7 +49,7 @@ const people = [
 							<div class="space-y-4">
 								<div class="text-xl leading-6 font-medium space-y-1">
 									<h3>{{ person.name }}</h3>
-									<p class="text-purple-500">{{ person.role }}</p>
+									<p class="text-[#eb86cd]">{{ person.role }}</p>
 								</div>
 
 								<p class="text-gray-300 text-xs 2xl:text-sm text-justify">{{ person.bio }}</p>
