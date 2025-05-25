@@ -21,24 +21,24 @@ const documents = [
 		icon: MegaphoneIcon,
 	},
 	{
-		name: "Plan de soutenance n°1",
-		description:
-			"Le plan de soutenance liste les différents aspects du projet évoqués au cours de notre présentation.",
-		href: "/documents/plan-1.pdf",
-		icon: ListBulletIcon,
-	},
-	{
 		name: "Rapport de soutenance n°2",
 		description: "Ce rapport présente les tâches réalisées depuis la première soutenance.",
 		href: "/documents/rapport-2.pdf",
 		icon: MegaphoneIcon,
 	},
 	{
-		name: "Plan de soutenance n°2",
+		name: "Rapport de soutenance n°3",
 		description:
-			"Le plan de soutenance liste les différents aspects du projet évoqués au cours de notre présentation.",
-		href: "/documents/plan-2.pdf",
-		icon: ListBulletIcon,
+			"Cet ultime rapport de soutenance agit comme une rétrospective sur le projet.",
+		href: "/documents/rapport-3.pdf",
+		icon: MegaphoneIcon,
+	},
+    	{
+		name: "Dossier d'exploitation",
+		description:
+			"Le dossier d'exploitation comprend un manuel d'installation, de désinstallation, et d'utilisation.",
+		href: "/documents/exploit.pdf",
+		icon: BookOpenIcon,
 	},
 ];
 </script>
@@ -50,7 +50,7 @@ const documents = [
 		<div class="py-24 space-y-20">
 			<h2 class="text-4xl font-bold tracking-tight sm:text-5xl text-[#7f5381] text-center w-full">Documents</h2>
 
-			<div class="grid grid-cols-1 px-8 lg:grid-cols-2 max-w-5xl mx-auto gap-5">
+			<div class="grid max-w-5xl grid-cols-1 gap-5 px-8 mx-auto lg:grid-cols-2">
 				<a target="_blank" :href v-for="{ description, name, icon, href } in documents">
 					<Card :description :name :icon color="purple" />
 				</a>

@@ -21,10 +21,15 @@ const buttons = [{ name: "Télécharger", link: "#download", icon: ArrowDownTray
 const cards = [
 	{
 		title: "Collectez",
-		label: "Au début du jeu, concentrez-vous sur la collecte manuelle des ressources essentielles. Identifiez rapidement les gisements de matériaux précieux et optimisez vos trajets pour transporter le maximum possible.",
+		label: "Au début de votre aventure dans Uzin, vous devrez explorer la carte et extraire manuellement les premières ressources indispensables à votre progression. Charbon, fer, cuivre et or sont dispersés dans le monde, et il vous faudra les repérer, puis les miner.",
 		icon: CubeIcon,
 	},
 
+	{
+		title: "Défendez",
+		label: "La planète ne restera pas passive face à votre activité. Plus vous extrayez de ressources et développez vos machines, plus vous attirez l'attention des créatures locales. Armez-vous et préparez-vous à les repousser.",
+		icon: ShieldExclamationIcon,
+	},
 	{
 		title: "Automatisez",
 		label: "Dès que possible, construisez vos premières machines d'automatisation. Priorisez les chaînes de production simples avant de passer à des systèmes complexes. Plus vos infrastructures fonctionnent seules, plus vous pouvez vous concentrer sur l'exploration et la défense.",
@@ -32,20 +37,14 @@ const cards = [
 	},
 
 	{
-		title: "Défendez",
-		label: "La planète ne restera pas passive. Installez des défenses autour de vos usines dès qu'elles commencent à attirer l'attention des créatures locales. Analysez les points faibles de vos installations et renforcez-les avec des tourelles, des barrières, ou des mécanismes avancés.",
-		icon: ShieldExclamationIcon,
-	},
-
-	{
 		title: "Explorez",
-		label: "Ne restez pas confiné à votre zone de départ. L'exploration vous permettra de découvrir des ressources rares, des technologies oubliées et des indices sur le passé mystérieux de la planète. Plus vous explorez, plus vous serez en mesure d'améliorer vos infrastructures et de débloquer des fonctionnalités avancées.",
+		label: "Ne restez pas confiné à votre zone de départ. L'exploration vous permettra de découvrir des ressources rares, des technologies oubliées et des indices sur le passé mystérieux de la planète. Plus vous explorez, plus vous serez en mesure de fabriquer des objets.",
 		icon: GlobeEuropeAfricaIcon,
 	},
 ];
 
 const steps = [
-	{ label: "Lire le lore", icon: BookOpenIcon},
+	{ label: "Lire le lore", icon: BookOpenIcon },
 	{ label: "Voir la galerie", icon: PhotoIcon },
 	{ label: "Télécharger", icon: ArrowDownTrayIcon },
 	{ label: "Jouer", icon: PuzzlePieceIcon },
@@ -59,7 +58,7 @@ for (var i = 0; i < cards.length; i++) {
 	(i % 2 == 0 ? firstRow : secondRow).push(cards[i]);
 }
 
-const items = ["/screenshots/screen2.png", "/screenshots/screen1.png"];
+const items = ["/screenshots/1.png", "/screenshots/2.png", "/screenshots/3.png", "/screenshots/4.png","/screenshots/5.png"];
 </script>
 
 <template>
@@ -81,7 +80,7 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png"];
 
 			<p class="px-5 text-base lg:text-xl text-center text-gray-400 mt-7 lg:px-0 lg:mt-10">
 				Un jeu où la <span class="font-medium text-white">gestion</span> rencontre la
-				<span class="font-medium text-white">survie</span> dans un monde hostile et évolutif.
+				<span class="font-medium text-white">survie</span> dans un monde hostile.
 			</p>
 
 			<div class="flex flex-row w-full flex-wrap justify-center mt-12 gap-x-2 gap-y-2 lg:w-full">
@@ -112,56 +111,50 @@ const items = ["/screenshots/screen2.png", "/screenshots/screen1.png"];
 		</UCarousel>
 
 		<div class="flex flex-col w-10/12 mx-auto mt-10 gap-y-6 lg:gap-y-0 lg:gap-x-8 lg:flex-row lg:w-8/12">
-			<div
-				class="w-full px-5 py-6 mx-auto overflow-hidden bg-[#7f5381] lg:w-[70%] lg:px-10 rounded-3xl lg:py-10"
-			>
+			<div class="w-full px-5 py-6 mx-auto overflow-hidden bg-[#7f5381] lg:w-[70%] lg:px-10 rounded-3xl lg:py-10">
 				<div class="flex flex-col items-center space-y-4 text-sm text-left text-white lg:text-base">
-					<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À propos du jeu</p>
+					<p class="text-2xl font-semibold tracking-tight lg:text-4xl">À propos du jeu</p>
 
-					<ul class="list-disc list-outside text-justify text-xs space-y-4 lg:text-base">
+					<ul class="list-disc list-outside text-justify text-xs space-y-4 lg:text-[17px]">
 						<li>
-							Dans <i>Uzin</i>, vous incarnez un <b>pionnier</b> envoyé sur une
-							<b>planète mystérieuse</b>, autrefois habitée par une <b>civilisation disparue</b>. Ce
-							monde, marqué par <b>un écosystème hostile et imprévisible</b>, regorge de
-							<b>ressources précieuses</b> et de <b>structures anciennes</b> empreintes de mystère.
+							L'histoire se déroule en l'an <b>2287</b>, dans un contexte où l'humanité a atteint un
+							sommet démographique sans précédent : <b>42,7 milliards</b> d'habitants. Cette explosion de
+							population a poussé la Terre au bord du gouffre, ses ressources s'épuisant à un rythme
+							alarmant. Incapable de soutenir cette densité humaine, l'humanité a été contrainte de
+							trouver des solutions radicales pour survivre.
 						</li>
 
 						<li>
-							Au fur et à mesure que vous <b>bâtissez vos usines</b> et
-							<b>automatisez vos processus</b> pour survivre, la planète réagit à votre présence. Des
-							<b>créatures redoutables</b> et des <b>pièges naturels</b>
-							émergent pour protéger les secrets enfouis de ce lieu.
+							C'est dans ce contexte que le <b>programme d'exploration interstellaire</b> a vu le jour.
+							Inspiré des anciens services militaires obligatoires, ce programme impose à chaque individu,
+							dès leur majorité, de quitter la Terre pour participer à des missions d'extraction de
+							ressources sur des planètes lointaines.
 						</li>
 
 						<li>
-							Chaque <b>décision</b> que vous prenez devient <b>cruciale</b> : progresserez-vous vers la
-							prospérité, ou succomberez-vous au chaos d'un environnement qui ne tolère aucune faiblesse ?
+							Chaque explorateur reçoit uniquement de quoi financer un <b>aller simple</b> vers la planète
+							d'extraction. Le retour sur Terre est conditionné à la réussite de leur mission, faisant de
+							chaque voyage un pari risqué. Allez-vous y parvenir ?
 						</li>
 					</ul>
 				</div>
 			</div>
 
 			<div
-				class="w-full px-5 py-6 mx-auto text-white bg-[#eb9fe2] lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
+				class="w-full px-5 py-6 mx-auto text-white bg-[#aa5ca1] lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
 			>
-				<p class="text-2xl font-semibold tracking-tight lg:text-3xl">À faire ensuite</p>
+				<p class="text-2xl font-semibold tracking-tight lg:text-4xl">À faire ensuite</p>
 
 				<div class="justify-center">
 					<div class="flex flex-col" v-for="(step, index) in steps">
 						<div class="flex flex-col">
 							<div class="flex flex-row space-x-3 items-center">
-								<component
-									:is="step.icon"
-									class="w-10 h-10 p-2 text-white bg-[#eb86cd] rounded-full"
-								/>
+								<component :is="step.icon" class="w-10 h-10 p-2 text-white bg-[#eb86cd] rounded-full" />
 
 								<p class="text-white text-xs lg:text-base">{{ step.label }}</p>
 							</div>
 
-							<span
-								v-if="index !== steps.length - 1"
-								class="w-0.5 h-6 bg-[#eb86cd] -mt-1 ml-[19.5px]"
-							/>
+							<span v-if="index !== steps.length - 1" class="w-0.5 h-6 bg-[#eb86cd] -mt-1 ml-[19.5px]" />
 						</div>
 					</div>
 				</div>
