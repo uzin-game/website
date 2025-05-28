@@ -16,7 +16,7 @@ defineProps<{
 	nextIcon?: string;
 }>();
 
-const buttons = [{ name: "Télécharger", link: "#download", icon: ArrowDownTrayIcon }];
+const buttons = [{ name: "Télécharger", link: "/UzinSetup.exe", icon: ArrowDownTrayIcon }];
 
 const cards = [
 	{
@@ -58,7 +58,13 @@ for (var i = 0; i < cards.length; i++) {
 	(i % 2 == 0 ? firstRow : secondRow).push(cards[i]);
 }
 
-const items = ["/screenshots/1.png", "/screenshots/2.png", "/screenshots/3.png", "/screenshots/4.png","/screenshots/5.png"];
+const items = [
+	"/screenshots/1.png",
+	"/screenshots/2.png",
+	"/screenshots/3.png",
+	"/screenshots/4.png",
+	"/screenshots/5.png",
+];
 </script>
 
 <template>
@@ -84,9 +90,10 @@ const items = ["/screenshots/1.png", "/screenshots/2.png", "/screenshots/3.png",
 			</p>
 
 			<div class="flex flex-row w-full flex-wrap justify-center mt-12 gap-x-2 gap-y-2 lg:w-full">
-				<button
+				<a
 					v-for="button in buttons"
 					:key="button.name"
+					href="/UzinSetup.exe"
 					class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-[#7f5381] to-[#eb9fe2] group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
 				>
 					<div
@@ -95,7 +102,7 @@ const items = ["/screenshots/1.png", "/screenshots/2.png", "/screenshots/3.png",
 						<component :is="button.icon" class="w-5 h-5" />
 						<span>{{ button.name }}</span>
 					</div>
-				</button>
+				</a>
 			</div>
 		</div>
 
@@ -143,7 +150,7 @@ const items = ["/screenshots/1.png", "/screenshots/2.png", "/screenshots/3.png",
 			<div
 				class="w-full px-5 py-6 mx-auto text-white bg-[#aa5ca1] lg:w-[30%] lg:px-10 rounded-3xl space-y-5 justify-center lg:py-10 flex flex-col items-center"
 			>
-				<p class="text-2xl font-semibold tracking-tight lg:text-4xl">À faire ensuite</p>
+				<p class="text-2xl font-semibold tracking-tight lg:text-4xl">Et ensuite ?</p>
 
 				<div class="justify-center">
 					<div class="flex flex-col" v-for="(step, index) in steps">

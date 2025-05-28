@@ -24,12 +24,13 @@ const Menu = () => {
 
 const Button = () => {
 	return (
-		<button
+		<a
 			type="button"
 			class="px-4 py-2 mb-2 text-sm font-medium text-white transition-colors rounded-lg lg:block focus:outline-none hover:bg-[#7f5381] focus:ring-4 focus:ring-purple-300 ring-2 ring-[#eb86cd] ring-opacity-70"
-		>
+            href="/UzinSetup.exe"
+        >
 			Jouer
-		</button>
+		</a>
 	);
 };
 </script>
